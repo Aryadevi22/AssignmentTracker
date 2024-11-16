@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+
+.rectangle {
+    width: 200px;
+    height: 600px;
+    background-color: #050505;
+    border: 2px solid #333;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Three-lines{
+    width: 30px;  /* Adjust width */
+    height: 30px; /* Adjust height */
+    position: absolute; /* Use absolute positioning */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+}
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.rectangle h1 {
+    color: rgb(253, 253, 253);
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Common button styling */
+.button {
+    width: 180px;
+    padding: 10px 60px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Added space between buttons */
+}
+
+/* Unique styles for different buttons */
+.menu-button {
+    background-color: #050505;
+    background-image: url(https://i.pinimg.com/474x/71/89/88/718988215800391b6050182a28ca6810.jpg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    padding-left: 50px;
+}
+
+.pomodoro-button {
+    background-color: #050505;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/006/922/896/original/alarm-clock-icon-silhouette-illustration-of-a-white-alarm-clock-on-a-black-background-vector.jpg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    padding-left: 50px;
+}
+
+.assignment-button {
+    background-color: #050505;
+    background-image: url(https://png.pngtree.com/png-vector/20191005/ourlarge/pngtree-beautiful-book-vector-line-icon-png-image_1795327.jpg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    padding-left: 50px;
+}
+
+.notifications-button {
+    background-color: #050505;
+    background-image: url(https://png.pngtree.com/png-clipart/20190705/original/pngtree-notification-vector-icon-png-image_4236467.jpg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    padding-left: 50px;
+}
+
+.settings-button {
+    background-color: #050505;
+    background-image: url(https://i.pinimg.com/564x/e7/7b/57/e77b5778d0e342e152e61ef84a866565.jpg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    padding-left: 50px;
+}
+.calender-button {
+    background-color: #050505;
+    background-image: url(https://i.pinimg.com/736x/41/2f/49/412f493022718d4fc0b098b458357c34.jpg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    padding-left: 50px;
+}
+
+/* Last special button */
+.special-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #1d3557;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.special-button:hover {
+    background-color: #457b9d;
+}
+
+.button:hover {
+    opacity: 0.8; /* Add a hover effect for all buttons */
+}
+.second-rectangle {
+    width: 400px;
+    height: 200px;
+    background-image: linear-gradient(to top, #0e0b29, #2B218D,#5d52c4);
+    color: white;
+    border: 2px solid #333;
+    border-radius: 20px;
+    font-family: kanit;
+    position: relative;
+    top: 200px;  /* 50px from the top of the nearest positioned ancestor */
+    left: 250px; 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.third-rectangle {
+    width: 600px;
+    height: 300px;
+    border: 1px solid #0e7005;
+    background-color: rgb(232, 235, 237);
+    color: rgb(2, 51, 11);
+    font-family: 'Kanit', sans-serif;
+    position: relative;
+    top: 300px;
+    left: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the top */
+    align-items: flex-start;      /* Align items to the left */
+    text-align: left;             /* Ensure text is left-aligned */
+}
+
+.third-rectangle h1 {
+    margin: 0; /* Remove default margin */
+    padding: 5px; /* Add padding if needed */
+    color: #0e7005; /* Color for heading */
+}
+.custom-hr {
+    height: 2px;
+    width: 600px;               /* Extend the length to 600px */
+    background-color: #115306;
+    border: none;
+    margin: 5px auto;           /* Keep the ruler centered with auto margins */
+}
+.custom-hr {
+    border: none;
+    border-top: 1px dashed #aaa;
+    margin: 10px auto; /* Centers the ruler */
+    width: 50%; /* Adjust the percentage to make the ruler shorter */
+}
+
