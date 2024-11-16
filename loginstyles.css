@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #041536;
+}
+
+/* Flexbox Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 550px;
+    width: 90%; /* Adjust container width */
+    max-width: 1200px;
+    margin: 0 auto; /* Center container horizontally */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.588);
+}
+
+/* Login/Signup Box Styles */
+.login-box, .signup-box {
+    width: 500px; /* Adjust the width as needed */
+    margin-left: 50px; /* Move the login box rightward */
+    height: 480px;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-left: 60px;
+    background: #ffffff;
+    border-radius: 25px;
+    border: 2px solid #ccc;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.499);
+}
+
+.login-box h2, .signup-box h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #041536;
+}
+
+.login-box form label, .signup-box form label {
+    display: block;
+    font-size: 17px;
+    padding-left: 4px;
+    margin-bottom: 5px;
+    color: #041536;
+}
+
+.login-box form input, .signup-box form input {
+    width: 60%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.login-box form button, .signup-box form button {
+    width: 40%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 11px;
+    margin-top: 15px;
+    margin-left: 55px;
+    background-color: #F26522;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login-box form button:hover, .signup-box form button:hover {
+    background-color: #f87538;
+}
+
+/* Image Container Styles */
+.illustration-container {
+    width: 45%; /* Adjust the width of the image container */
+    text-align: right; /* Align image to the right */
+}
+
+.girl-image {
+    max-width: 100%; /* Scale image proportionally */
+    height: auto;
+    margin-right: 15px; /* Move image slightly to the right */
+    border-radius: 10px;
+}
+
+/* Sign-up Link Styles */
+.signup-link,.login-link {
+    margin-top: 10px;
+    padding-right: 180px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.signup-link a,.login-link  a{
+    color: #3498db; /* Adjust color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover,.login-link  a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for Sign-up Page Form */
+.signup-box form input {
+    margin-bottom: 15px;
+}
+
+.signup-box .form-group {
+    margin-bottom: 15px;
+}
+
+.signup-box .form-group label {
+    font-size: 16px;
+}
+
+.signup-box .form-group input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.signup-box .form-group button {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #F26522;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.signup-box .form-group button:hover {
+    background-color: #f87538;
+}
