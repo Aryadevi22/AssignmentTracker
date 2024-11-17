@@ -12,12 +12,19 @@
         <button class="close-button" id="close-button">&times;</button>
         <ul>
             <li><a href="#">Menu</a></li>
-            <li><a href="pomodoro.html">Pomodoro</a></li>
-            <li><a href="#">Assignment</a></li>
-            <li><a href="calender.html">Calendar</a></li>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="pomodoro.html"><img src="https://static.vecteezy.com/system/resources/previews/006/922/896/original/alarm-clock-icon-silhouette-illustration-of-a-white-alarm-clock-on-a-black-background-vector.jpg" alt="Pomodoro" class="icon">Pomodoro</a></li>
+            <li><a href="#"><img src="https://png.pngtree.com/png-vector/20191005/ourlarge/pngtree-beautiful-book-vector-line-icon-png-image_1795327.jpg" alt="Assignment" class="icon">Assignment</a></li>
+            <li><a href="calender.html"><img src="https://i.pinimg.com/736x/41/2f/49/412f493022718d4fc0b098b458357c34.jpg" alt="calnder" class="icon">Calendar</a></li>
+            <li><a href="notification.html"><img src="https://png.pngtree.com/png-clipart/20190705/original/pngtree-notification-vector-icon-png-image_4236467.jpg" alt="notification" class="icon">Notifications</a></li>
+            <li><a href="#"><img src="https://i.pinimg.com/564x/e7/7b/57/e77b5778d0e342e152e61ef84a866565.jpg" alt="settings"  class="icon">Settings</a></li>
         </ul>
+    </div>
+
+    <!-- Pomodoro Image in a Separate Div -->
+    <div class="pomodoro-container">
+        <a href="pomodoro.html">
+            <img src="pomodoro.jpg" alt="Pomodoro Timer" class="pomodoro-img">
+        </a>
     </div>
 
     <!-- Main Content -->
@@ -29,7 +36,7 @@
             <img src="https://openclipart.org/image/2000px/247319" 
                  alt="Profile Picture" 
                  class="profile-image">
-            <h1>USERNAME</h1>
+            <h1 id="username-display">Student</h1>
         </header>
 
         <div class="content">
@@ -40,11 +47,95 @@
             </div>
             <div class="rectangle2">
                 <h2>Task Overview</h2>
-                
+                <p>To be completed:</p>
+                <p>Task 1</p>
+                <p>Task 2</p>
+                <p>Task 3</p>
+                <p>Task 4</p>
+                <p>Task 5</p>
+                <p>Task 6</p>
+                <p>Task 7</p>
+                <p></p>
+            </div>
+            
+            <!-- Calendar Container -->
+            <div class="calendar-box">
+                <h2>Calendar</h2>
+                <div id="calendar"></div>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="scriptMenu.js"></script>
+    <script>
+        // Generate the current month calendar
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const date = new Date();
+            const currentMonth = date.getMonth();
+            const currentYear = date.getFullYear();
+
+            // Get the number of days in the current month
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            // Get the day of the week the month starts on
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+
+            // Array of month names
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const currentMonthName = monthNames[currentMonth]; // Get the name of the current month
+
+            // Calendar header for current month and year
+            let calendarHTML = `
+                <div class="calendar-header">
+                    <h2>${currentMonthName} ${currentYear}</h2>
+                </div>
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>`;
+
+            // Add empty cells for days before the start of the month
+            for (let i = 0; i < firstDay; i++) {
+                calendarHTML += `<td></td>`;
+            }
+
+            // Add the days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                if ((firstDay + day - 1) % 7 === 0 && day !== 1) {
+                    calendarHTML += `</tr><tr>`;
+                }
+                // Add today's date class
+                const today = new Date();
+                const isToday = today.getDate() === day && today.getMonth() === currentMonth && today.getFullYear() === currentYear;
+                const todayClass = isToday ? 'today' : '';
+                calendarHTML += `<td class="${todayClass}">${day}</td>`;
+            }
+
+            // Add empty cells for days after the end of the month
+            const totalCells = firstDay + daysInMonth;
+            const remainingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+
+            for (let i = 0; i < remainingCells; i++) {
+                calendarHTML += `<td></td>`;
+            }
+
+            calendarHTML += `</tr></tbody></table>`;
+            calendar.innerHTML = calendarHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', generateCalendar);
+    </script>
 </body>
 </html>

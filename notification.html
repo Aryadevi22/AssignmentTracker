@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications Page</title>
+  <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+  <div class="notifications-page">
+    <!-- Header -->
+    <header class="header">
+      <button class="back-button">&larr; Back</button>
+      <h1>Notifications</h1>
+    </header>
+
+    <!-- Filters and Search -->
+    <div class="filters">
+      <input type="text" id="search-bar" placeholder="Search tasks...">
+      <div class="filter-buttons">
+        <button data-filter="all" class="filter active">All</button>
+        <button data-filter="assignments" class="filter">Assignments</button>
+        <button data-filter="reminders" class="filter">Reminders</button>
+      </div>
+    </div>
+
+    <!-- Notifications List -->
+    <div class="tasks-list" id="tasks-list">
+      <!-- Tasks will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <script src="script3.js"></script>
+</body>
+</html>
