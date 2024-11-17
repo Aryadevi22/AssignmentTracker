@@ -1,9 +1,9 @@
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #f4f4f9;
+    background-color: #ffffff;
+    position: relative; /* Add relative positioning for the calendar box */
 }
 
 /* Sidebar */
@@ -13,8 +13,9 @@ body {
     left: -250px; /* Hidden by default */
     width: 250px;
     height: 100%;
-    background-color: #041536;
-    color: white;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transition: left 0.3s ease; /* Smooth slide-in effect */
@@ -25,33 +26,52 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
+    font-size: 20px;
     background: none;
     border: none;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
 .sidebar ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    margin-top: 50px;
+    margin: 0;
 }
 
-.sidebar ul li {
-    margin: 20px 0;
+.sidebar li {
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    margin-bottom: 40px; /* Add space below each list item */
 }
 
-.sidebar ul li a {
-    color: white;
+.sidebar li a {
     text-decoration: none;
-    font-size: 18px;
+    color: #f3f3f3;
+    font-size: 22px;
+    margin-left: 10px; /* Space between icon and text */
+}
+.sidebar .icon {
+    width: 50px;
+    height: 50px; /* Adjust icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333; /* Icon background color */
+    border-radius: 50%; /* Optional, makes icons circular */
 }
 
-.sidebar ul li a:hover {
-    text-decoration: underline;
+/* Example of the profile and settings icon */
+.sidebar .icon img {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
 }
-
+.sidebar li a:hover {
+    background-color: #022F40;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 /* Header */
 header {
     display: flex;
@@ -62,7 +82,7 @@ header {
     background-color: #022F40;
     color: white;
     border-radius: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.433);
     animation: slideInFromLeft 1s ease-out;
 }
 
@@ -88,6 +108,7 @@ header h1 {
 .container {
     margin: 20px;
 }
+
 @keyframes welcomeAnimation {
     0% {
         transform: translateY(-20px);
@@ -98,6 +119,7 @@ header h1 {
         opacity: 1;
     }
 }
+
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-30px);
@@ -110,52 +132,124 @@ header h1 {
 }
 
 .rectangle1 {
-    background: #074055 ;
-    width:700px;
+    background: #074055;
+    width: 700px;
     height: 150px;
     margin-bottom: 20px;
-    margin-top:30px;
+    margin-top: 30px;
     padding: 20px;
-    
     margin-left: 50px;
     border-radius: 8px;
     font-size: 25px;
     color: rgb(255, 255, 255);
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.416);
     animation: welcomeAnimation 1s ease-out;
 }
+
 .rectangle2 {
-    background:#08506a;
-    width:700px;
+    background: #08506a;
+    width: 700px;
     height: 450px;
     margin-bottom: 20px;
-    margin-top:30px;
+    margin-top: 30px;
     padding: 20px;
     padding-left: 20px;
     margin-left: 50px;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 23px;
     color: rgb(255, 255, 255);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.436);
     animation: welcomeAnimation 1s ease-out;
 }
 
-.rectangle1 h2 {
-    margin: 0 0 10px 0;
-    font-size: 28px;
-}
+.rectangle1 h2,
 .rectangle2 h2 {
     margin: 0 0 10px 0;
     font-size: 28px;
 }
 
-.rectangle ul {
-    list-style-type: none;
-    padding: 0;
+/* Calendar Box Styling */
+/* Calendar Box Styling */
+/* Calendar Box Styling */
+.calendar-box {
+    background: #0a6383;
+    width: 550px;
+    height: 450px; /* Adjust the height as needed */
+    padding: 30px;
+    padding-top: 10px;
+    position: absolute; /* This will allow us to place it relative to the container */
+    top: 350px; /* Adjust this value to align it next to the task view box */
+    right: 10px;  /* Adjust right positioning based on the container's layout */
+    border-radius: 8px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.492);
+}
+.calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.rectangle ul li {
-    padding: 5px 0;
+.calendar-table {
+    .today {
+        font-weight: bold;           /* Bold today's date */
+        background-color: #0e85b0;   /* Yellow background */
+        color: #ffffff;              /* Red text color */
+    }
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    
+    
 }
 
+/* Style for today's date */
+
+
+.calendar-table th, .calendar-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    
+}
+
+.calendar-table th {
+    background-color: #022F40;
+    color: rgb(255, 255, 255);
+}
+
+.calendar-table td {
+    color: #041536;
+    background-color: #f9f9f9;
+}
+
+.calendar-table td:hover {
+    background-color: #022F40;
+    color: #f4f4f9;
+    cursor: pointer;
+}
+
+.pomodoro-container {
+    position:absolute;
+
+    right:158px;
+    top: 20px;
+    
+    z-index: 100;
+}
+
+.pomodoro-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.pomodoro-img:hover {
+    transform: scale(1.1);
+} 
